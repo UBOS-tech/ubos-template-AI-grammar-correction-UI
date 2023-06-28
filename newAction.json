@@ -1,0 +1,165 @@
+[
+    {
+        "_id": "6425abc6dbe27c120000000c",
+        "applicationId": "marketplace",
+        "organizationId": "Org",
+        "pluginType": "API",
+        "pluginId": "API",
+        "createdAt": "2023-03-30T15:33:26.122Z",
+        "updatedAt": "2023-04-07T09:44:03.677Z",
+        "deleted": false,
+        "policies": [
+            {
+                "permission": "read:actions",
+                "groups": [],
+                "users": []
+            },
+            {
+                "permission": "manage:actions",
+                "groups": [],
+                "users": []
+            },
+            {
+                "permission": "execute:actions",
+                "groups": [],
+                "users": []
+            }
+        ],
+        "Action": {
+            "name": "generateColor",
+            "datasource": {
+                "invalids": [],
+                "datasourceConfiguration": {
+                    "url": "https://marketback-627e69c2cd5a3f150000000b.ubos.tech"
+                },
+                "isValid": true,
+                "name": "DEFAULT_REST_DATASOURCE",
+                "new": true,
+                "organizationId": "Org",
+                "pluginId": "API",
+                "userPermissions": []
+            },
+            "executeOnLoad": false,
+            "pageId": "Mood to color",
+            "actionConfiguration": {
+                "timeoutInMillisecond": 10000,
+                "encodeParamsToggle": true,
+                "httpMethod": "POST",
+                "headers": [
+                    {
+                        "key": "content-type",
+                        "value": "application/json"
+                    }
+                ],
+                "queryParameters": [],
+                "bodyFormData": [],
+                "formData": {
+                    "apiContentType": "none"
+                },
+                "pluginSpecifiedTemplates": [
+                    {
+                        "value": true
+                    }
+                ],
+                "path": "/generateColor",
+                "body": "{\n\t\"prompt\":\"{{main.store.prompt.prompt_field}}\"\n}"
+            },
+            "dynamicBindingPathList": [
+                {
+                    "key": "body"
+                }
+            ],
+            "isValid": true,
+            "invalids": [],
+            "jsonPathKeys": [
+                "main.store.prompt.prompt_field"
+            ],
+            "userSetOnLoad": false,
+            "confirmBeforeExecute": false
+        }
+    },
+    {
+        "_id": "642afbbe8740f01100000010",
+        "applicationId": "marketplace",
+        "organizationId": "Org",
+        "pluginType": "API",
+        "pluginId": "API",
+        "createdAt": "2023-04-03T16:15:58.062Z",
+        "updatedAt": "2023-06-07T08:57:53.753Z",
+        "deleted": false,
+        "policies": [
+            {
+                "permission": "read:actions",
+                "groups": [],
+                "users": []
+            },
+            {
+                "permission": "manage:actions",
+                "groups": [],
+                "users": []
+            },
+            {
+                "permission": "execute:actions",
+                "groups": [],
+                "users": []
+            }
+        ],
+        "Action": {
+            "name": "create_GrammarCorrection",
+            "datasource": {
+                "invalids": [],
+                "datasourceConfiguration": {
+                    "url": "{{main.env.back}}/createGrammarCorrection"
+                },
+                "isValid": true,
+                "name": "DEFAULT_REST_DATASOURCE",
+                "new": true,
+                "organizationId": "Org",
+                "pluginId": "API",
+                "userPermissions": []
+            },
+            "executeOnLoad": false,
+            "pageId": "Grammar correction",
+            "actionConfiguration": {
+                "timeoutInMillisecond": 10000,
+                "encodeParamsToggle": true,
+                "httpMethod": "POST",
+                "headers": [
+                    {
+                        "key": "content-type",
+                        "value": "application/json"
+                    }
+                ],
+                "queryParameters": [],
+                "body": "{\n\t\"text\":{{JSON.stringify(Input_prompt.text)}},\n\t\"key\":{{JSON.stringify(Input1.text)}}\n}",
+                "bodyFormData": [],
+                "formData": {
+                    "apiContentType": "none"
+                },
+                "pluginSpecifiedTemplates": [
+                    {
+                        "value": true
+                    }
+                ],
+                "path": ""
+            },
+            "dynamicBindingPathList": [
+                {
+                    "key": "body"
+                },
+                {
+                    "key": "datasourceUrl"
+                }
+            ],
+            "isValid": true,
+            "invalids": [],
+            "jsonPathKeys": [
+                "main.env.back",
+                "JSON.stringify(Input_prompt.text)",
+                "JSON.stringify(Input1.text)"
+            ],
+            "userSetOnLoad": false,
+            "confirmBeforeExecute": false
+        }
+    }
+]
